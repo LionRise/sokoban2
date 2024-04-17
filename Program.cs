@@ -121,10 +121,11 @@ public static class Program
 
     private static bool IsOutOfBounds(int x, int y) => x <= 0 || y <= 0 || x >= Cols - 1 || y >= Rows - 1;
 
-    private static void MovePlayer((int X, int Y) newPos, ref (int X, int Y) player) {
-    _grid[newPos.Y, newPos.X] = PlayerChar;
-    _grid[player.Y, player.X] = TileChar;
-    player = newPos; // Update the reference to player's position directly
-}
+    private static void MovePlayer((int X, int Y) newPos, ref (int X, int Y) player)
+    {
+        _grid[newPos.Y, newPos.X] = PlayerChar;
+        _grid[player.Y, player.X] = TileChar;
+        player = newPos; // Update the reference to player's position directly
+    }
 
 }
